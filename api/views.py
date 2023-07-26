@@ -3,10 +3,11 @@ import requests
 
 
 def index(request):
-    r = requests.get('https://randomuser.me/api/')
+    n = request.GET.get('n', 1)
+    r = requests.get(f'https://randomuser.me/api/?results={n}')
     if r.status_code == 200:
-        user = r.json()['results'][0]
+        users = r.json()['results']
     else:
         user = None
     
-    return render(request, 'index.html', {'user': user})
+    return render(request, 'index.html', {'users': users})
