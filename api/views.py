@@ -4,6 +4,7 @@ import requests
 
 
 def index(request):
+    numb = request.GET.get('numb', 1)
     n = request.GET.get('n', 1)
     gender = request.GET.get('gender')
     r = requests.get(f'https://randomuser.me/api/?results={n}&gender={gender}')

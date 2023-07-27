@@ -44,6 +44,20 @@
      
       grid-auto-rows: 450px;
     }
+    .num{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #007bff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: white;
+      
+    }
+
+
   </style>
 </head>
 
@@ -52,8 +66,10 @@
     <h1>Random User Generator</h1>
   </header>
   <div class="users">
+  
     {% for user in users %}
     <div class="container">
+      <div class="num"> 5 </div>
       <div class="user-info">
         <img id="avatar" src="{{ user.picture.large }}" alt="User Avatar">
         <h2 id="name">{{ user.name.first }} {{ user.name.last }}</h2>
