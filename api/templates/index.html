@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Random User Generator</title>
@@ -37,23 +38,32 @@
       text-align: center;
     }
 
+    .users {
+      display: grid;
+      grid-template-columns:repeat(4,400px);
+     
+      grid-auto-rows: 400px;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Random User Generator</h1>
   </header>
-
-  {% for user in users %}
+  <div class="users">
+    {% for user in users %}
     <div class="container">
-        <div class="user-info">
+      <div class="user-info">
         <img id="avatar" src="{{ user.picture.large }}" alt="User Avatar">
         <h2 id="name">{{ user.name.first }} {{ user.name.last }}</h2>
         <p id="email">{{ user.email }}</p>
-        <p id="location">at {{ user.location.street.name }} {{ user.location.street.number }} {{ user.location.city }} in {{ user.location.country }}</p>
-        </div>
+        <p id="location">at {{ user.location.street.name }} {{ user.location.street.number }} {{ user.location.city }}
+          in {{ user.location.country }}</p>
+      </div>
     </div>
     {% endfor %}
-
+  </div>
 </body>
+
 </html>
