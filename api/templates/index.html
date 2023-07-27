@@ -42,7 +42,7 @@
       display: grid;
       grid-template-columns:repeat(4,400px);
      
-      grid-auto-rows: 400px;
+      grid-auto-rows: 450px;
     }
   </style>
 </head>
@@ -57,6 +57,8 @@
       <div class="user-info">
         <img id="avatar" src="{{ user.picture.large }}" alt="User Avatar">
         <h2 id="name">{{ user.name.first }} {{ user.name.last }}</h2>
+        <p> Age {{user.dob.age}} </p>
+        <p> Gender {{user.gender}} </p>
         <p id="email">{{ user.email }}</p>
         <p id="location">at {{ user.location.street.name }} {{ user.location.street.number }} {{ user.location.city }}
           in {{ user.location.country }}</p>
